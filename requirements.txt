@@ -1,0 +1,2 @@
+scapy==2.4.2
+scapy-http==1.8.2
