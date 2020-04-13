@@ -8,6 +8,7 @@
 
 import argparse
 import scapy.all as scapy
+from termcolor import colored
 
 def get_arguements():
     parser = argparse.ArgumentParser()
@@ -29,13 +30,13 @@ def arp_scan(ip):
 
 
 def print_results(answered_list):
-    print("IP Address \t\t\t\t Mac Address\n---------------------------------------------------------")
+    print(colored("IP Address \t\t\t\t Mac Address\n---------------------------------------------------------", "yellow"))
     for element in answered_list:
         if len(element[1].psrc) == 11:
             print(element[1].psrc + "\t\t\t\t" + element[1].hwsrc)  # The answered list contains packets sent and answer.
         if len(element[1].psrc) == 13:
             print(element[1].psrc + "\t\t\t\t" + element[1].hwsrc)  # The answered list contains packets sent and answer.
-        print("---------------------------------------------------------")
+        print(colored("---------------------------------------------------------", "yellow"))
 
 #    print(answered_list.summary())
 #    arp_request_broadcast.show()
