@@ -15,7 +15,7 @@ def get_arguements():
     parser.add_argument("-r", "--range", dest="ip", help="Network range or IP to Scan.")
     options = parser.parse_args()
     if not options.ip:
-        parser.error("Use -h to display help")
+        parser.error("IP / IP Range not Specified. Use -h to display Help")
     return options
 
 def arp_scan(ip):
